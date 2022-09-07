@@ -1,0 +1,217 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Prisma</title>
+	<meta name="ad.size" content="width=800,height=600">
+	<meta name="old.GCD" content=""/>
+	<style type="text/css">
+		@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,500;1,400;1,500&display=swap');
+		body{
+			margin: 0;
+		}
+		#bannerAnimado{
+			width:800px; height: 600px; background-color: #FFFFFF; margin: 0 auto; position: relative; overflow: hidden; font-family: 'Rubik', sans-serif; font-style: italic; font-weight: 400; background: url(bg.jpg) no-repeat center; background-size: cover; color: white;
+		}
+		#borde{
+			width: calc(100% - 2px); height: calc(100% - 2px); border: 1px solid #CCCCCC; position: absolute;top: 0; left: 0; z-index: 100; cursor: pointer;
+		}
+		#halo{
+			width: inherit;
+		    height: inherit;
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    z-index: 90; 
+		}
+		#halo svg {
+		  display: block;
+		  margin: 0 auto;
+		  position: relative;
+		  top: 68%;
+		}
+		#cuadro1{
+			width: 570px; height: 160px; 
+			position: absolute; 
+			top:150px; 
+			left: calc(50% - 570px/2);
+			z-index: 0;
+			background: rgb(2,62,133);
+			background: linear-gradient(90deg, rgba(2,62,133,0.8884147408963585) 0%, rgba(2,62,133,0.5354735644257703) 100%);
+			font-size: 34px; line-height: 41px; display: flex; 
+			align-items: center; 
+			justify-content: center;
+			
+			-webkit-border-top-right-radius: 20px;
+			-webkit-border-bottom-left-radius: 20px;
+			-moz-border-radius-topright: 20px;
+			-moz-border-radius-bottomleft: 20px;
+			border-top-right-radius: 20px;
+			border-bottom-left-radius: 20px;
+
+			animation-delay: 3s;
+
+			-webkit-animation: fadeOut 1s ease 3s 1 forwards;
+			   -moz-animation: fadeOut 1s ease 3s 1 forwards;
+			        animation: fadeOut 1s ease 3s 1 forwards; 
+
+		}
+		#logo{
+			position: absolute; 
+			bottom: 0; 
+			left: 0;
+			z-index: 0;
+			width: inherit; height: inherit; 
+			background: url(logo.png) no-repeat center 420px;
+
+		}
+		#items{
+			position: absolute; 
+			bottom: 0; 
+			left: 0;
+			z-index: 0;
+			opacity: 0;
+			width: inherit; height: inherit; 
+			background: url(items.png) no-repeat center 77px;
+
+			-webkit-animation: fadeIn 1s ease 3s 1 forwards;
+			   -moz-animation: fadeIn 1s ease 3s 1 forwards;
+			        animation: fadeIn 1s ease 3s 1 forwards; 
+
+
+		}
+		#placa{
+			position: absolute; 
+			bottom: 0; 
+			left: 0;
+			z-index: 0;
+			opacity: 0;
+			width: inherit; height: inherit; 
+			background: rgb(0,71,140);
+			background: linear-gradient(180deg, rgba(0,71,140,1) 0%, rgba(2,62,133,1) 100%);
+
+			-webkit-animation: fadeIn 1s ease 7s 1 forwards;
+			   -moz-animation: fadeIn 1s ease 7s 1 forwards;
+			        animation: fadeIn 1s ease 7s 1 forwards; 
+		}
+		#logo2{
+			position: absolute; 
+			bottom: 0; 
+			left: 0;
+			z-index: 0;
+			opacity: 0;
+			width: inherit; height: inherit; 
+			background: url(logo.png) no-repeat center 0px;
+			background-size: 62%;
+
+			-webkit-animation: fadeIn 1s ease 7s 1 forwards;
+			   -moz-animation: fadeIn 1s ease 7s 1 forwards;
+			        animation: fadeIn 1s ease 7s 1 forwards; 
+		}
+		#txt{
+			position: absolute; 
+			top: 270px; 
+			left: 0;
+			z-index: 0;
+			opacity: 0;
+			width: inherit; 
+			font-style: normal;
+			font-weight: 300;
+			font-size: 37px;
+			text-align: center;
+
+			-webkit-animation: fadeIn 1s ease 7s 1 forwards;
+			   -moz-animation: fadeIn 1s ease 7s 1 forwards;
+			        animation: fadeIn 1s ease 7s 1 forwards; 
+		}
+		#boton{
+			background-color: #00B5B6; 
+			width:230px; 
+			height: 53px;
+			line-height: 53px;  
+			text-align: center; 
+			font-size: 23px; 
+			bottom: 40px;
+			left: calc(50% - 230px/2); 
+			position: absolute; 
+			border-radius: 30px;
+			opacity: 0;
+			font-style: normal;
+			font-weight: 500;
+
+			-webkit-animation: fadeIn 1s ease 7s 1 forwards;
+			   -moz-animation: fadeIn 1s ease 7s 1 forwards;
+			        animation: fadeIn 1s ease 7s 1 forwards; 
+		}
+
+		@-webkit-keyframes fadeIn{ 0%{opacity:0;} 100%{opacity:1;}}
+		   @-moz-keyframes fadeIn{ 0%{opacity:0;} 100%{opacity:1;}}
+		        @keyframes fadeIn{ 0%{opacity:0;} 100%{opacity:1;}}
+
+		@-webkit-keyframes fadeOut{ 0%{opacity:1;} 100%{opacity:0;}}
+		   @-moz-keyframes fadeOut{ 0%{opacity:1;} 100%{opacity:0;}}
+		        @keyframes fadeOut{ 0%{opacity:1;} 100%{opacity:0;}}
+
+
+	</style>
+</head>
+<body>
+	<div id="bannerAnimado">
+		<div id="borde"></div>
+		<div id="logo"></div>
+		<div id="halo">
+			<svg width="800px" height="195px">
+			    <defs>  
+			        <linearGradient id="halo-gradient"> 
+			            <stop offset="0%" stop-color="#00b1b5">
+			                <animate attributeName="stop-color" values="#00b1b5; #1d4484; #e61d55; #ffd600; #e61d55; #1d4484; #00b1b5;" dur="3s" repeatCount="4"></animate>
+			            </stop>
+
+						<stop offset="20%" stop-color="#1d4484">
+			                <animate attributeName="stop-color" values="#1d4484; #e61d55; #ffd600; #e61d55; #1d4484; #00b1b5; #1d4484" dur="3s" repeatCount="4"></animate>
+			            </stop>
+
+						<stop offset="40%" stop-color="#e61d55">
+			                <animate attributeName="stop-color" values="#e61d55; #ffd600; #e61d55; #1d4484; #00b1b5; #1d4484; #e61d55;" dur="3s" repeatCount="4"></animate>
+			            </stop>
+
+						<stop offset="60%" stop-color="#ffd600">
+			                <animate attributeName="stop-color" values="#ffd600; #e61d55; #1d4484; #00b1b5; #1d4484; #e61d55; #ffd600;" dur="3s" repeatCount="4"></animate>
+			            </stop>
+
+						<stop offset="80%" stop-color="#e61d55">
+			                <animate attributeName="stop-color" values="#e61d55; #1d4484; #00b1b5; #1d4484; #e61d55; #ffd600; #e61d55;" dur="3s" repeatCount="4"></animate>
+			            </stop>
+
+						<stop offset="90%" stop-color="#1d4484">
+			                <animate attributeName="stop-color" values="#1d4484; #00b1b5; #1d4484; #e61d55; #ffd600; #e61d55; #1d4484;" dur="3s" repeatCount="4"></animate>
+			            </stop>
+
+						<stop offset="100%" stop-color="#00b1b5">
+			                <animate attributeName="stop-color" values="#00b1b5; #1d4484; #e61d55; #ffd600; #e61d55; #1d4484; #00b1b5;" dur="3s" repeatCount="4"></animate>
+			            </stop>
+
+			        </linearGradient> 
+			    </defs>
+			    <g>
+			      <path fill="url('#halo-gradient')" d="M736.47,65.15l-.64-.03h-.6c-.43,.03-43.99,.51-91.45-22.56-8.33-4.05-15.8-7.94-23.02-11.7-30.95-16.11-55.4-28.83-102.84-30.72-28.99-1.15-83.43,4.02-248.55,54.67-79.53,24.39-154.45,17.26-203.31,6.98C38.27,55.94,15.51,48.44,0,42.55v35.13c15.44,5.36,35.14,11.26,58.15,16.15,26.58,5.66,60.32,10.45,98.31,10.45s79.44-4.71,122.58-17.94c123.44-37.86,198.94-54.78,237.56-53.25,40.07,1.59,59.5,11.71,88.92,27.02,7.42,3.86,15.09,7.85,23.83,12.1,52.31,25.44,99.75,25.94,105.95,25.9,5.04,.2,35.27,.71,68.12-12.96V48.51c-32.1,18.09-66.59,16.66-66.95,16.64Z"></path>
+			    </g>
+			</svg>
+		</div>
+		<div id="cuadro1">
+			Soluciones para tu comercio <br>
+			que te solucionan la vida.
+		</div>
+		<div id="items"></div>
+		<div id="placa"></div>
+		<div id="logo2"></div>
+		<div id="txt">junto a vos y tu negocio</div>
+		<div id="boton">CONOC&Eacute; M&Aacute;S</div>
+	</div>
+
+	<div style = 'position: fixed; width: 100%; height: 100%; top: 0; overflow: hidden; z-index: 98;display: block; cursor:pointer' onclick="adcase_click()" ></div>
+	<script>function adcase_click() { window.top.postMessage({ msg: 'adcase_click', format:'html5' }, '*'); window.open(clickTag, '_blank')}</script>
+	<script>var clickTag = 'https://www.payway.com.ar/?utm_source=la_nacion&utm_medium=cpm&utm_campaign=dp_la_nacion_brand_awa_20220829_branding&utm_content=ie_desktop_html5_generico_800x600';</script>
+	<script data-exports-type='dclk-quick-preview'>if(typeof studio !== 'undefined' && studio.Enabler) { studio.Enabler.setRushSimulatedLocalEvents(true); }</script>
+</body>
+</html>
